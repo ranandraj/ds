@@ -17,3 +17,6 @@ df_quiet=df_both[df_both<5]
 print(df_quiet.head())
 print(df[(df['direction_center'] < 3) | (df['direction_mariakerke'] < 3)].head())
 print(df.resample('H').sum().mean())
+df_monthly=df.resample('M').sum()
+df_monthly.plot()
+plt.savefig('output.pdf',format='pdf')
